@@ -1,0 +1,231 @@
+body
+  background-color: #fafafa
+  color: #757575
+  margin: 0
+
+label
+  margin-bottom: 0
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+button
+  background: 0 0
+  position: relative
+  border: none
+  border-radius: 3px
+  color: #757575
+  height: 36px
+  margin: 0
+  min-width: 64px
+  padding: 0 15px 0 25px
+  display: inline-block
+  font-size: 1rem
+  text-transform: uppercase
+  overflow: hidden
+  transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1)
+  outline: none
+  cursor: pointer
+  text-decoration: none
+  text-align: center
+  line-height: 36px
+  vertical-align: middle
+  &:hover
+    background-color: rgba(158, 158, 158, .2)
+    color: #2196F3
+  &:active
+    background-color: rgba(158, 158, 158, .4)
+  &.icon
+    border-radius: 50%
+    font-size: 24px
+    height: 32px
+    margin-left: 0
+    margin-right: 0
+    min-width: 32px
+    width: 32px
+    padding: 0
+    overflow: hidden
+    line-height: normal
+  &.material-icons
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-12px, -12px)
+    line-height: 24px
+    width: 24px
+    vertical-align: middle
+  i
+    position: absolute
+    left: 8px
+    top: 10px
+    font-family: fontawesome, sans-serif
+    font-style: normal
+    &.fa-trash
+      top: 1px
+    &.fa-plus-circle
+      top: 1px
+input
+  font-size: 1rem
+  color: #757575
+  padding: .5em
+  border-radius: 3px
+  border: 1px solid lightgray
+  outline: none
+
+main
+  background: #fff
+  border-radius: 2px
+  overflow: hidden
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+
+header
+  display: flex
+  align-items: center
+  padding: 0 1rem
+  color: white
+  background-color: #f0db4f
+  text-align: center
+  text-transform: uppercase
+
+header h1
+  display: inline-block
+  color: #323330
+  margin: 1rem auto
+
+/* Todo Item */
+.todo-item
+  display: flex
+  font-size: 1rem
+  border-top: 1px solid rgba(0, 0, 0, .1)
+  background-color: #fff
+  transition: all .2s
+  -webkit-user-select: none
+  user-select: none
+  padding: 1em
+  align-items: center
+  &.completed *
+    color: lightgray
+  & .checkbox
+    margin-right: .5rem
+  & .title,
+  & .textfield
+    margin-right: auto
+  &.completed .title
+    text-decoration: line-through
+  &.editing .title
+    display: none
+  & .textfield
+    display: none
+  &.editing .textfield
+    display: block
+  & button
+    opacity: 0
+    transition: all .2s
+
+.todo-item:hover button:not(.checkbox)
+  opacity: 1
+
+/* Todo form */
+#todo-form
+  display: flex
+  background-color: #FAFAFA
+  border-top: 1px solid rgba(0, 0, 0, .1)
+  padding: 10px
+
+#todo-form input
+  flex: 1
+  outline: none
+  transition: all .2s
+
+#todo-form input:focus
+  border: 1px solid #f0db4f
+
+#todo-form button
+  margin-left: 10px
+.title
+  position: relative
+  padding-left: 30px
+  &:hover
+    cursor: pointer
+    color: #2196F3
+    transition: .2s cubic-bezier(.4, 0, 1, 1)
+  & input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+  &:hover input ~ .checkmark
+    background-color: #ccc
+  & input:checked ~ .checkmark
+    background-color: #2196F3
+  & input:checked ~ .checkmark:after
+    display: block
+  & .checkmark:after
+    left: 9px
+    top: 3px
+    width: 8px
+    height: 16px
+    border: solid white
+    border-width: 0 3px 3px 0
+    transform: rotate(45deg)
+.checkmark
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+  transition: .2s cubic-bezier(.4, 0, 1, 1)
+  &:after
+    content: ""
+    position: absolute
+    display: none
+
+.modal
+  display: block
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgba(0,0,0,0.4)
+  animation-name: fadeIn
+  animation-duration: 0.4s
+  &__content
+    position: fixed
+    background-color: #fefefe
+    width: 100%
+    top: 0
+    animation-name: slideIn
+    animation-duration: 0.4s
+    text-align: center
+  &__close
+    color: white
+    float: right
+    font-size: 28px
+    font-weight: bold
+    font-family: fontawesome, sans-serif
+    transition: .2s cubic-bezier(.4, 0, 1, 1)
+    &:hover,
+    &:focus
+      color: #000
+      text-decoration: none
+      cursor: pointer
+  &__text
+    padding: 20px 15px
+    display: flex
+    justify-content: center
+    p
+      font-size: 1.5rem
+      margin-bottom: 0
+  &__header
+    padding: 15px
+    color: white
+    display: flex
+    justify-content: space-between
+    &-error
+      background-color: #ff0000
+
+

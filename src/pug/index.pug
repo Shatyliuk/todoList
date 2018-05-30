@@ -1,0 +1,22 @@
+extends /layout/main
+block variables
+    - var title = 'TODO List'
+block content
+    main(id="app")
+        header
+            h1 todo list app
+        ul(id="todo-list")
+            li.todo-item
+                label.title
+                    p.title_text Your task
+                    input(type="checkbox").checkbox
+                    span.checkmark
+                input(type="text").textfield
+                button.edit Edit
+                    i.fa.fa-pencil
+                button.delete Delete
+                    i.fas.fa-trash
+        form(id="todo-form")
+            input(id="add-input" type="text")
+            button(id="add-button" type="submit") Add
+                i.fas.fa-plus-circle
